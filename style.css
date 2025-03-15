@@ -1,76 +1,21 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Full-screen background */
-body {
-    font-family: Arial, sans-serif;
-    background: url("https://imgur.com/a/csJs07i") no-repeat center center fixed;
-    background-size: cover;
+.about-container {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
 }
 
-/* Search bar container */
-.search-container {
-    width: 100%;
-    max-width: 600px;
-}
-
-/* Google-style search bar */
-.search-box {
-    width: 100%;
-    max-width: 500px;
-    height: 45px;
-    border-radius: 25px;
-    border: 1px solid #dfe1e5;
-    padding: 10px 15px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Add shadow on focus */
-.search-box:focus {
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-    border-color: #4285f4;
-}
-
-/* Search button */
-.search-button {
-    height: 45px;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #4285f4;
+.about-link {
+    text-decoration: none;
     color: white;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
 }
 
-.search-button:hover {
-    background: #357ae8;
-}
-
-/* Custom Logo */
-.logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .search-box {
-        width: 90%;
-    }
+.about-link:hover {
+    border-bottom: 2px solid white;
 }
