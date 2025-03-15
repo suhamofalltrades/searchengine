@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Engine</title>
+    <title>Custom Search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Search Box -->
+    <!-- Custom Logo (Optional) -->
+    <img src="https://imgur.com/a/8wpVMnF" alt="Logo" class="logo">
+
+    <!-- Search Bar -->
     <div class="search-container">
-        <script async src="https://cse.google.com/cse.js?cx=568b6415b7aa74ca9"></script>
-        <div class="gcse-search"></div>
+        <form action="https://www.google.com/search">
+            <input type="text" name="q" class="search-box" placeholder="Search...">
+            <input type="submit" value="Search" class="search-button">
+        </form>
     </div>
+
+    <!-- GCSE Script -->
+    <script async src="https://cse.google.com/cse.js?cx=YOUR_GCSE_ID"></script>
+    <div class="gcse-search"></div>
 
 </body>
 </html>
