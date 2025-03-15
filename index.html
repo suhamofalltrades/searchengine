@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script async src="https://cse.google.com/cse.js?cx=568b6415b7aa74ca9"></script>
+    <div class="search-container">
+    <!-- Custom Search Bar -->
+    <input type="text" id="custom-search-input" placeholder="Search here..." oninput="syncSearch()">
+    <button type="button" id="custom-search-btn" onclick="performSearch()">
+        <img src="search-icon.png" alt="Search">
+    </button>
+
+    <!-- Actual GCSE Search Box (Hidden) -->
     <div class="gcse-search"></div>
+</div>
+
+<script async src="https://cse.google.com/cse.js?cx=568b6415b7aa74ca9"></script>
+<script>
+    function syncSearch() {
+        document.querySelector(".gsc-input").value = document.getElementById("custom-search-input").value;
+    }
+    
+    function performSearch() {
+        document.querySelector(".gsc-search-button").click();
+    }
+</script>
 </body>
 </html>
