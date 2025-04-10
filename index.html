@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Suham's Search Engine</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYWWM9ZD8Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YYWWM9ZD8Q');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5143111980083196"
-     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<script async src="https://cse.google.com/cse.js?cx=568b6415b7aa74ca9">
-</script>
-<div class="gcse-searchbox-only"></div>
-<div style="text-align: center; margin-top: 50px;">
-    <p>
-        <a href="https://www.instagram.com/suhamofalltrades" target="_blank">Instagram</a> |
-        <a href="https://www.github.com/suhamofalltrades" target="_blank">GitHub</a>
-    </p>
-    <p>me@suhamalltrades.mywire.com</p>
-</div>
+  <!-- Search box container -->
+  <div id="search-box">
+    <gcse:searchbox-only></gcse:searchbox-only>
+  </div>
+
+  <!-- Search results container -->
+  <div id="search-results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div>
+
+  <!-- Google CSE Script -->
+  <script async src="https://cse.google.com/cse.js?cx=568b6415b7aa74ca9"></script>
+
+  <script>
+    // Handle ?search= from URL
+    const query = new URLSearchParams(location.search).get('search');
+    if (query) {
+      window.__gcse = {
+        callback: function() {
+          const element = google.search.cse.element.getElement("searchresults-only0");
+          if (element) {
+            element.execute(query);
+          }
+        }
+      };
+    }
+  </script>
 </body>
 </html>
